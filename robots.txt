@@ -1,0 +1,3 @@
+User-agent: * 
+Disallow: https://gidrogel.store/success
+Sitemap: https://gidrogel.store/sitemap.xml
