@@ -1,0 +1,10 @@
+@mixin breakpoint($br) {
+  @media (min-width: $br) {
+    @content;
+  }
+}
+@mixin pc() {
+  @media (hover: hover) { 
+    @content;
+   }
+}
