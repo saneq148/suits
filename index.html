@@ -10,7 +10,7 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/style.css">
   <script type="text/javascript" src="/js/store.js" async></script>
-  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
@@ -778,10 +778,17 @@
       watchSlidesProgress: true,
     });*/
     let swiperThumbs = new Swiper('.swiper-thumbs', {
-      direction: 'vertical',
+      direction: 'horizontal',
       mousewheel: true,
       slidesPerView: 3,
-      spaceBetween: 45,
+      spaceBetween: 10,
+      centeredSlidesBounds: true,
+      breakpoints: {
+        576: {
+          direction: 'vertical',
+          spaceBetween: 45,
+        }
+      }
     })
     let galleryTop = new Swiper('.swiper-main', {
       navigation: {

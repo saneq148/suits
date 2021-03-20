@@ -1,0 +1,176 @@
+.main-info {
+    padding: 1rem 0 0;
+    @include breakpoint($medium-bp) {
+      padding: 0 2rem;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    .input-title {
+      font-size: 1.6rem;
+      font-weight: 300;
+    }
+    &__current-price, &__old-price {
+      font-size: 3.6rem;
+      &::after {
+        content: "₴";
+        display: inline;
+      }
+    }
+    &__current-price {
+      font-weight: 600;
+      color: $red;
+      margin-right: 2rem;
+    }
+    &__old-price {
+      color: $grey-for-text;
+      font-weight: 400;
+      text-decoration-line: line-through;
+    }
+    &__in-stock {
+      font-size: 1.6rem;
+      background-color: $light-green;
+      color: $text-green;
+      margin-right: auto;
+      margin-top: 2rem;
+      padding: .5rem 2rem;
+      border-radius: 3px;
+      width: fit-content;
+      .material-icons {
+        vertical-align: sub;
+        max-width: 24px;
+      }
+      .text {
+        line-height: 30px;
+      }
+    }
+    &__colors {
+      margin-top: 2rem;
+    }
+    &__sizes {
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+    &__colors {
+      input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+        &:focus ~ .color-circle, &:focus ~ .color__img{
+            border: 2px solid rgba($color: red, $alpha: .5);
+            filter: contrast(1.5);
+        }
+        &:checked ~ .color-circle, &:checked ~ .color__img {
+          border: 2px solid rgba($color: $text-green, $alpha: .5);
+          filter: contrast(1.5);
+        }
+        
+      }
+      ul {
+        display: flex;
+        list-style-type: none; 
+        li {
+            margin: .5rem 1rem 0 0;
+        }
+      }
+      .color__img {
+        box-sizing: content-box;
+        border: 2px solid transparent;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .color-img {
+        width: 60px;
+        height: 60px;
+        display: block;
+        object-fit: cover;
+        border-radius: 4px;
+      }
+      .color-circle {
+        height: 30px;
+        width: 30px;
+        background-color: #F1F1F1;
+        border-radius: 50%;
+        border: 1px solid #DEDEDE;
+        margin: 8px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        &__inside {
+          border-radius: 50%;
+          height: 14px;
+          width: 14px;
+          background-color: green;
+        }
+      }
+    }
+  }
+  
+  
+  .main-info__sizes {
+    ul {
+      display: flex;
+      list-style-type: none;
+      li {
+        margin: .5rem .5rem 0 0;
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        input:focus ~ .sizes__title {
+          border-color: $red;
+        }
+        input:checked ~ .sizes__title {
+          background-color: $light-green;
+          border-color: $text-green;
+        }
+      }
+    }
+  }
+  .sizes__title {
+    background-color: #F5F5F5;
+    text-transform: uppercase;
+    border: 1px solid #DCDCDC;
+    width: 53px;
+    height: 53px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    font-weight: 600;
+    font-size: 1.6rem;
+    cursor: pointer;
+  }
+  
+  .buy-button {
+    margin-top: auto;
+    margin-bottom: 0;
+    button {
+      background-color: $red;
+      min-height: 6.5rem;
+      color: white;
+      font-weight: bold;
+      font-size: 2.6rem;
+      outline: none;
+      border: none;
+      padding: 0 3.6rem;
+      border-radius: 3px;
+      font-family: inherit;
+      cursor: pointer;
+      box-sizing: content-box;
+      border: 1px solid transparent;
+      &:focus {
+        border: 1px solid black;
+      }
+    }
+    .material-icons {
+      width: 24px;
+      vertical-align: middle;
+    }
+  }
